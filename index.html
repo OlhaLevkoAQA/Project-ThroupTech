@@ -13,6 +13,7 @@
   --shadow: rgba(255,102,0,0.15);
 }
 
+
 /* General Styles */
 body {
   font-family: 'Arial', sans-serif;
@@ -250,7 +251,7 @@ header {
       }
     }
 
-    /* Hero Video Background */
+/* Hero Video Background */
 .hero-video {
   position: absolute;
   top: 0; left: 0;
@@ -259,6 +260,70 @@ header {
   z-index: 0;
 
 }
+
+/* Popular courses section base */
+.popular-courses {
+  padding: 100px 20px; /* було 60px, стало більше */
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.popular-courses h2 {
+  font-size: 3rem; /* було 2rem */
+  margin-bottom: 60px; /* більше простору */
+  font-weight: bold;
+}
+
+/* Карусель */
+.variant1 .carousel {
+  display: flex;
+  gap: 40px; /* ширший проміжок */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+
+/* Картки курсів */
+.variant1 .course-card {
+  flex: 0 0 320px; /* було 250px */
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.variant1 .course-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+}
+.variant1 .course-card img {
+  width: 100%;
+  height: 200px; /* було 160px */
+  object-fit: cover;
+}
+.variant1 .course-card h3 {
+  font-size: 1.4rem;
+  margin: 20px 0;
+}
+.variant1 .badge {
+  position: absolute;
+  top: 15px; left: 15px;
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+  /* CTA strip */
+  .cta-strip{display:grid;gap:14px;place-items:center;text-align:center;background:linear-gradient(180deg,#101820,#0c131a);border:1px solid #1c2834;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+
+ /* Scroll-reveal animation */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
 
 /* --- Mobile Adaptation --- */
 @media (max-width: 992px) {
@@ -294,6 +359,7 @@ header {
   .card { width: 90%; }
 
   .reviews-section { padding: 50px 15px; }
+
 </style>
 
 
@@ -326,7 +392,7 @@ header {
 
   <div class="hero-content">
     <h1 class="hero-slogan">LIVE YOUR LIFE IN ANOTHER LANGUAGE</h1>
-    <a href="https://www.throuptech.com/contact-us" class="cta-button hero-cta">Try your free lesson today</a>
+    <a href="https://www.throuptech.com/contact-us" class="cta-button hero-cta">Start Your Free Lesson Today</a>
   </div>
 </section>
 
@@ -340,6 +406,29 @@ header {
     <div class="card"><div class="card-icon">📱</div><h3>Teacher Support Anytime</h3><p>Ask questions outside of class via WhatsApp/Telegram, get answers within 2 hours.</p></div>
     <div class="card"><div class="card-icon">✏️</div><h3>Custom-Made Classes</h3><p>Lessons tailored to your personal or professional needs.</p></div>
     <div class="card"><div class="card-icon">👥</div><h3>Individual & Group Options</h3><p>Choose what fits your goals, with regular discounts available.</p></div>
+  </div>
+</section>
+
+
+<section class="popular-courses variant1" id="courses">
+  <h2>Popular Courses</h2>
+  <div class="carousel">
+    <a href="https://www.throuptech.com/contact-us" class="course-card">
+      <span class="badge">🔥 Top Rated</span>
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80" alt="">
+      <h3>Speaking Club</h3>
+    </a>
+    
+	<a href="https://www.throuptech.com/contact-us" class="course-card">
+      <span class="badge">✨ New</span>
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80" alt="">
+      <h3>Business English</h3></a>
+    
+	<a href="https://www.throuptech.com/contact-us" class="course-card">
+      <span class="badge">⚡ Bestseller</span>
+      <img src="https://www.kdc.vic.edu.au/assets/uploads/2022/05/exams.jpg" alt="">
+      <h3>Exam Prep</h3>
+    </a>
   </div>
 </section>
 
@@ -423,7 +512,6 @@ header {
     </div>
   </section>
 
- 
 
 
 <script>
